@@ -6,16 +6,9 @@ import Skills from './Skills';
 import Projects from './Projects';
 import Experience from './Experience';
 import Education from './Education';
-import { Wrapper } from './styles/commons';
+import { Wrapper } from '../styles/commons';
 
-const Profile = ({
-	data,
-	projectActive,
-	updateProjectActive,
-	isMenuOpen,
-	openMenu,
-	closeMenu
-}) => (
+const Profile = ({ data, projectActive, updateProjectActive, isMenuOpen, openMenu, closeMenu }) => (
 	<Wrapper>
 		<Header
 			header={data.header}
@@ -45,15 +38,12 @@ Profile.propTypes = {
 		projects: PropTypes.arrayOf(PropTypes.object),
 		experience: PropTypes.arrayOf(PropTypes.object),
 		education: PropTypes.arrayOf(PropTypes.object)
-	}),
+	}).isRequired,
 	projectActive: PropTypes.string.isRequired,
 	updateProjectActive: PropTypes.func.isRequired,
 	isMenuOpen: PropTypes.bool.isRequired,
 	openMenu: PropTypes.func.isRequired,
 	closeMenu: PropTypes.func.isRequired
-};
-Profile.defaultProps = {
-	data: undefined
 };
 
 export default Profile;

@@ -10,25 +10,30 @@ injectGlobal`
 `;
 
 export const Wrapper = styled.div`
-    width: 750px;
-    box-sizing: border-box;
+	width: 750px;
+	box-sizing: border-box;
 	margin: 50px auto;
 	padding: 0;
 	background: ${COLOR.WHITE};
-	border: 0.6px solid ${COLOR.LIGHTGREY};
+	border: 1px solid ${COLOR.LIGHTGREY};
 	border-radius: 3px;
-    box-shadow: 3px 3px 6px ${COLOR.LIGHTGREY}
-    @media ${DEVICE.TABLET} {
-        width: 100%;
-        margin: 0;
-    }
+	box-shadow: 3px 3px 6px ${COLOR.LIGHTGREY} @media ${DEVICE.TABLET} {
+		width: 100%;
+		margin: 0;
+	}
+	@media ${DEVICE.TABLET} {
+		width: 100%;
+		margin: 0;
+	}
 `;
 export const Section = styled.div`
 	background: ${COLOR.WHITE};
 	padding: 18px 26px;
-	${props => props.dark && css`
-		background: ${COLOR.DARK};
-    `}
+	${props =>
+		props.dark &&
+		css`
+			background: ${COLOR.DARK};
+		`}
     @media ${DEVICE.TABLET} {
 		ul {
 			padding-inline-start: 15px;
@@ -51,15 +56,17 @@ export const TitleWrapper = styled.div`
 		border-bottom: 1px solid ${COLOR.MAIN};
 		cursor: default;
 	}
-	${props => props.dark && css`
-		.title {
-			background: ${COLOR.MAIN_LIGHT};
-			color: ${COLOR.WHITE};
-			padding: 6px;
-			border-bottom: none;
-			border-radius: 3px;
-		}
-    `}
+	${props =>
+		props.dark &&
+		css`
+			.title {
+				background: ${COLOR.MAIN_LIGHT};
+				color: ${COLOR.WHITE};
+				padding: 6px;
+				border-bottom: none;
+				border-radius: 3px;
+			}
+		`}
     @media ${DEVICE.TABLET} {
         .title {
             font-size: ${FONT.SIZE.MOBILE_TITLE};
@@ -73,9 +80,9 @@ export const TitleLine = styled.div`
 	height: 1px;
 	border-radius: 3%;
 	background: ${COLOR.MAIN_LIGHT};
-    @media ${DEVICE.TABLET} {
-        width: 40vw;
-    }
+	@media ${DEVICE.TABLET} {
+		width: 40vw;
+	}
 `;
 export const Li = styled.li`
 	color: ${COLOR.WHITE};
@@ -108,14 +115,15 @@ export const Li = styled.li`
 	.description {
 		font-size: ${FONT.SIZE.LITTLE_TEXT};
 	}
-	${props => props.edu && css`
-		padding: 0;
-		.main .title,
-		.main .time {
-			margin: 0 18px;
-		}
-
-    `}
+	${props =>
+		props.edu &&
+		css`
+			padding: 0;
+			.main .title,
+			.main .time {
+				margin: 0 18px;
+			}
+		`}
     @media ${DEVICE.TABLET} {
 		margin-bottom: 6px;
         .main .title {

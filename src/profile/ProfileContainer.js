@@ -1,38 +1,33 @@
 import React, { Component } from 'react';
-import dataJSON from '../utils/data.json';
-import Profile from './Profile';
+import data from './utils/data.json';
+import Profile from './components/Profile';
 
 class ProfileContainer extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			projectActive: 'Appointments Demo',
-			data: {},
 			isMenuOpen: false
 		};
 	}
 
-	componentDidMount() {
-		this.setState({ data: { ...dataJSON } });
-	}
-
-	updateProjectActive = (p) => {
+	updateProjectActive = p => {
 		const { projectActive } = this.state;
-		/* eslint-disable no-unused-expressions */
 		projectActive === p
-			? this.setState({ projectActive: '' }) : this.setState({ projectActive: p });
-	}
+			? this.setState({ projectActive: '' })
+			: this.setState({ projectActive: p });
+	};
 
-	openMenu = () => { this.setState({ isMenuOpen: true }); }
+	openMenu = () => {
+		this.setState({ isMenuOpen: true });
+	};
 
-	closeMenu = () => { this.setState({ isMenuOpen: false }); }
+	closeMenu = () => {
+		this.setState({ isMenuOpen: false });
+	};
 
 	render() {
-		const {
-			data,
-			projectActive,
-			isMenuOpen
-		} = this.state;
+		const { projectActive, isMenuOpen } = this.state;
 		return (
 			<div>
 				<Profile
