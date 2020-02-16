@@ -30,7 +30,8 @@ export const Project = styled.div`
 			transition: 0.3s;
 			cursor: pointer;
 			&:focus {
-				outline-color: transparent;
+				outline-color: none;
+				outline: none;
 			}
 			&:hover {
 				opacity: 0.6;

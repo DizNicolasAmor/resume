@@ -20,9 +20,7 @@ const Projects = ({ data, projectActive, updateProjectActive }) => (
 							<button
 								type="button"
 								className="title"
-								onClick={() => {
-									updateProjectActive(pro.title);
-								}}
+								onClick={() => updateProjectActive(pro.title)}
 							>
 								<div className="toogle-collapse">{projectActive === pro.title ? '-' : '+'}</div>
 								{pro.title}

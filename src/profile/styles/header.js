@@ -16,13 +16,13 @@ export const HeaderTitle = styled.div`
     text-align: left;
     cursor: default;
     ${props =>
-			props.isName &&
-			css`
+		props.isName
+			&& css`
 				font-size: x-large;
 			`}
     ${props =>
-			props.isPosition &&
-			css`
+		props.isPosition
+			&& css`
 				font-size: 16px;
 				font-weight: 400;
 			`}
@@ -53,11 +53,12 @@ export const MenuWrapper = styled.div`
 		}
 		&:focus {
 			outline-color: transparent;
+			outline: none;
 		}
 	}
 	${props =>
-		props.isMobile &&
-		css`
+		props.isMobile
+		&& css`
 			margin: 0;
 			.icon-menu {
 				position: absolute;
