@@ -14,8 +14,7 @@ const Education = ({ data }) => (
 				return (
 					<Li key={key} edu>
 						<div className="main">
-							<div className="title">{edu.title}</div>
-							<div className="time">{edu.time}</div>
+							<div className="title">{edu.time}. {edu.title}</div>
 						</div>
 					</Li>
 				);
