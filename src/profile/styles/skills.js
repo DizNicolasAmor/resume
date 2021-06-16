@@ -98,7 +98,7 @@ export const SkillLogo = styled.div`
 		width: 70px;
 		height: 30px;
 		text-align: center;
-		font-size: ${FONT.SIZE.TEXT};
+		font-size: ${FONT.SIZE.LITTLE_TEXT};
 		font-weight: 500;
 		letter-spacing: 0.3px;
 		color: ${COLOR.MAIN_DARK};
