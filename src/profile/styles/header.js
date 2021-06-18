@@ -52,8 +52,7 @@ export const MenuWrapper = styled.div`
 			opacity: 0.6;
 		}
 		&:focus {
-			outline-color: transparent;
-			outline: none;
+			outline: 1px solid ${COLOR.MAIN};
 		}
 	}
 	${props =>

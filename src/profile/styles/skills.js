@@ -63,7 +63,7 @@ export const SkillsBody = styled.div`
 			opacity: 0.6;
 		}
 		&:focus {
-			outline: none;
+			outline: 1px solid ${COLOR.MAIN_DARK};
 		}
 		&.prev {
 			left: -32px;
