@@ -26,7 +26,7 @@ export const Wrapper = styled.div`
 		margin: 0;
 	}
 `;
-export const Section = styled.div`
+export const Section = styled.section`
 	background: ${COLOR.WHITE};
 	padding: 18px 26px;
 	${props =>

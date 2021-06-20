@@ -5,17 +5,13 @@ import { Section, TitleWrapper, TitleLine } from '../styles/commons';
 import { AboutBody, Info, DescriptionWrapper, Image, Description } from '../styles/about';
 
 const About = ({ data }) => (
-	<Section id="about">
+	<Section id="about" aria-labelledby="section-title">
 		<TitleWrapper>
-			<div className="title">ABOUT ME</div>
+			<h2 className="title" id="section-title">ABOUT ME</h2>
 			<TitleLine />
 		</TitleWrapper>
 		<AboutBody>
 			<Info>
-				<div>
-					<span>Phone</span>
-					{data.phone}
-				</div>
 				<div>
 					<span>Email</span>
 					{data.email}
@@ -23,13 +19,14 @@ const About = ({ data }) => (
 				<div className="about__icons">
 					{data.social.map(eachSocial => (
 						<a
+							aria-label={eachSocial.ariaLabel}
 							key={eachSocial.title}
 							href={eachSocial.link}
 							title={eachSocial.title}
 							target="_blank"
 							rel="noreferrer noopener"
 						>
-							<InlineSVG src={eachSocial.src} />
+							<InlineSVG aria-hidden role="img" src={eachSocial.src} />
 						</a>
 					))}
 				</div>
