@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Section, TitleWrapper, TitleLine, Li } from '../styles/commons';
 
 const Experience = ({ data }) => (
-	<Section dark id="experience">
+	<Section dark id="experience" aria-labelledby="section-title-experience">
 		<TitleWrapper dark>
-			<div className="title">EXPERIENCE</div>
+			<h2 className="title" id="section-title-experience">EXPERIENCE</h2>
 			<TitleLine />
 		</TitleWrapper>
 		<ul>

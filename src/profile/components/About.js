@@ -5,9 +5,9 @@ import { Section, TitleWrapper, TitleLine } from '../styles/commons';
 import { AboutBody, Info, DescriptionWrapper, Image, Description } from '../styles/about';
 
 const About = ({ data }) => (
-	<Section id="about" aria-labelledby="section-title">
+	<Section id="about" aria-labelledby="section-title-about">
 		<TitleWrapper>
-			<h2 className="title" id="section-title">ABOUT ME</h2>
+			<h2 className="title" id="section-title-about">ABOUT ME</h2>
 			<TitleLine />
 		</TitleWrapper>
 		<AboutBody>
