@@ -6,34 +6,53 @@ import { Section, TitleWrapper, TitleLine } from '../styles/commons';
 import { ProjectsBody, Project, ProjectDescription } from '../styles/projects';
 
 const Projects = ({ data, projectActive, updateProjectActive }) => (
-	<Section dark id="projects">
+	<Section dark id="projects" aria-labelledby="section-title-projects">
 		<TitleWrapper dark>
-			<div className="title">PROJECTS</div>
+			<h2 className="title" id="section-title-projects">PROJECTS</h2>
 			<TitleLine />
 		</TitleWrapper>
 		<ProjectsBody>
 			{data.map((pro, index) => {
 				const key = `pro-key__${index}`;
+				const isExpanded = projectActive === pro.title;
+				const ariaLabelRow = `${isExpanded ? 'Collapse' : 'Expand'} ${pro.title} project information`;
+				const toggleCollapseText = isExpanded ? '-' : '+';
+
 				return (
 					<Project key={key}>
 						<div className="row">
 							<button
+								aria-label={ariaLabelRow}
 								type="button"
 								className="title"
 								onClick={() => updateProjectActive(pro.title)}
 							>
-								<div className="toogle-collapse">{projectActive === pro.title ? '-' : '+'}</div>
+								<div className="toogle-collapse">
+									{toggleCollapseText}
+								</div>
 								{pro.title}
 							</button>
-							<a href={pro.link} className="link" target="_blank" rel="noreferrer noopener">
+							<a
+								aria-label={`See ${pro.title} project`}
+								className="link"
+								href={pro.link}
+								rel="noreferrer noopener"
+								target="_blank"
+							>
 								Link
 							</a>
-							<a href={pro.repo} className="repo" target="_blank" rel="noreferrer noopener">
+							<a
+								aria-label={`See ${pro.title} project repository`}
+								className="repo"
+								href={pro.repo}
+								rel="noreferrer noopener"
+								target="_blank"
+							>
 								Repo
 							</a>
 						</div>
 
-						<Collapse isOpened={projectActive === pro.title}>
+						<Collapse isOpened={isExpanded}>
 							<ProjectDescription>
 								<div className="img-wrapper">
 									<InlineSVG src={pro.image} />
