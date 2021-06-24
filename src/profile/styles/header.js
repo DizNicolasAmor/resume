@@ -1,12 +1,12 @@
 import styled, { css } from 'styled-components';
 import { FONT, COLOR, DEVICE } from './variables';
 
-export const HeaderWrapper = styled.div`
+export const HeaderWrapper = styled.header`
 	background: ${COLOR.WHITE_2};
 	padding: 26px;
 	position: relative;
 `;
-export const HeaderTitle = styled.div`
+export const HeaderTitle = styled.h1`
     font-family: ${FONT.FAMILY.MAIN};
     font-weight: 600;
     letter-spacing: 0.1em;
@@ -20,17 +20,15 @@ export const HeaderTitle = styled.div`
 			&& css`
 				font-size: x-large;
 			`}
-    ${props =>
-		props.isPosition
-			&& css`
-				font-size: 16px;
-				font-weight: 400;
-			`}
+    span {
+		font-size: 16px;
+		font-weight: 400;
+	}
     @media ${DEVICE.TABLET} {
         text-align: center;
     }
 `;
-export const MenuWrapper = styled.div`
+export const MenuWrapper = styled.nav`
 	display: flex;
 	justify-content: center;
 	margin: 21px 0 0 0;

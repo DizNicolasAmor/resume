@@ -19,8 +19,11 @@ const Header = ({ header, menu, isMenuOpen, openMenu, closeMenu }) => (
 	<div>
 		{header !== undefined && menu !== undefined && (
 			<HeaderWrapper id="header">
-				<HeaderTitle isName>{header.name}</HeaderTitle>
-				<HeaderTitle isPosition>{header.position}</HeaderTitle>
+				<HeaderTitle isName>
+					{header.name}
+					<br/>
+					<span>{header.position}</span>
+				</HeaderTitle>
 
 				<MediaQuery query="(max-width: 750px)">
 					<MenuWrapper isMobile>
@@ -36,6 +39,7 @@ const Header = ({ header, menu, isMenuOpen, openMenu, closeMenu }) => (
 						<MenuMobile className={isMenuOpen ? 'active' : 'inactive'}>
 							{menu.map(section => (
 								<button
+									aria-label={`Go to ${section.name} section`}
 									type="button"
 									key={section.name}
 									className="button-mobile"
@@ -55,6 +59,7 @@ const Header = ({ header, menu, isMenuOpen, openMenu, closeMenu }) => (
 					<MenuWrapper>
 						{menu.map(section => (
 							<button
+								aria-label={`Go to ${section.name} section`}
 								type="button"
 								key={section.name}
 								onClick={() => {
