@@ -43,7 +43,6 @@ const About = ({ data }) => (
 
 About.propTypes = {
 	data: PropTypes.shape({
-		phone: PropTypes.string.isRequired,
 		email: PropTypes.string.isRequired,
 		social: PropTypes.arrayOf(
 			PropTypes.shape({

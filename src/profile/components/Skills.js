@@ -28,9 +28,9 @@ const Skills = ({ skills }) => {
 		}
 	};
 	return (
-		<Section id="skills">
+		<Section id="skills" aria-labelledby="section-title-skills">
 			<TitleWrapper>
-				<div className="title">SKILLS</div>
+				<h2 className="title" id="section-title-skills">SKILLS</h2>
 				<TitleLine />
 			</TitleWrapper>
 			<SkillsBody>
@@ -47,8 +47,12 @@ const Skills = ({ skills }) => {
 						</SkillLogo>
 					))}
 				</Swiper>
-				<InlineSVG src={arrow} onClick={goPrev} className="arrow prev" />
-				<InlineSVG src={arrow} onClick={goNext} className="arrow next" />
+				<button aria-label="Slide to the left" className="arrow prev" onClick={goPrev}>
+					<InlineSVG aria-hidden role="img" src={arrow} />
+				</button>
+				<button aria-label="Slide to the right" className="arrow next" onClick={goNext}>
+					<InlineSVG aria-hidden role="img" src={arrow} />
+				</button>
 			</SkillsBody>
 		</Section>
 	);

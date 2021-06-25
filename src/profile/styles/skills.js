@@ -49,7 +49,6 @@ export const SkillsBody = styled.div`
 
 	.arrow {
 		position: absolute;
-		top: 29px;
 		height: 100%;
 		border: none;
 		background: transparent;
