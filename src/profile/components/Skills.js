@@ -42,7 +42,7 @@ const Skills = ({ skills }) => {
 				>
 					{skills.map(skill => (
 						<SkillLogo key={skill.title}>
-							<InlineSVG src={skill.svg} />
+							<InlineSVG role="img" alt={skill.title} src={skill.svg} />
 							<p className="name">{skill.title}</p>
 						</SkillLogo>
 					))}
