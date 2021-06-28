@@ -4,6 +4,7 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
+		"focus-trap-react": "^8.6.0",
 		"prop-types": "^15.6.2",
 		"react": "^16.4.2",
 		"react-collapse": "^4.0.3",

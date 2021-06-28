@@ -53,27 +53,31 @@ export const MenuWrapper = styled.nav`
 			outline: 1px solid ${COLOR.MAIN};
 		}
 	}
+	.icon-menu {
+		&.hidden {
+			display: none;
+		}
+	}
 	${props =>
 		props.isMobile
 		&& css`
 			margin: 0;
 			.icon-menu {
+				border: none;
+				background: transparent;
+				margin: auto;
+				padding: auto;
 				position: absolute;
 				top: 18px;
 				right: 18px;
 				cursor: pointer;
+				z-index: 10;
 				svg {
 					width: 24px;
 					height: 24px;
 					path {
 						fill: ${COLOR.MAIN};
 					}
-				}
-				&.open {
-					z-index: 10;
-				}
-				&.close {
-					z-index: 0;
 				}
 			}
 		`}
@@ -114,6 +118,7 @@ export const MenuMobile = styled.div`
         opacity: 1;
     }
     &.inactive {
+        visibility: hidden;
         opacity: 0;
         z-index: -1;
     }

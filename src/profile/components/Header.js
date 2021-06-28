@@ -3,6 +3,7 @@ import scrollToElement from 'scroll-to-element';
 import MediaQuery from 'react-responsive';
 import InlineSVG from 'svg-inline-react';
 import PropTypes from 'prop-types';
+import FocusTrap from 'focus-trap-react';
 import { HeaderWrapper, HeaderTitle, MenuWrapper, Backdrop, MenuMobile } from '../styles/header';
 
 const iconMenuOpen =
@@ -27,31 +28,54 @@ const Header = ({ header, menu, isMenuOpen, openMenu, closeMenu }) => (
 
 				<MediaQuery query="(max-width: 750px)">
 					<MenuWrapper isMobile>
-						<InlineSVG
-							src={isMenuOpen ? iconMenuClose : iconMenuOpen}
+						<button
+							aria-label="Open menu"
+							className={`icon-menu ${isMenuOpen ? 'hidden' : ''}`}
 							/* eslint-disable no-unused-expressions */
-							onClick={() => {
-								isMenuOpen ? closeMenu() : openMenu();
-							}}
-							className={`icon-menu ${isMenuOpen ? 'open' : 'close'}`}
-						/>
-						<Backdrop className={isMenuOpen ? 'active' : 'inactive'} />
-						<MenuMobile className={isMenuOpen ? 'active' : 'inactive'}>
-							{menu.map(section => (
-								<button
-									aria-label={`Go to ${section.name} section`}
-									type="button"
-									key={section.name}
-									className="button-mobile"
-									onClick={() => {
-										closeMenu();
-										scrollToElement(`#${section.name}`, scrollParams);
+							onClick={openMenu}
+						>
+							<InlineSVG alt="Open menu icon" aria-hidden role="img" src={iconMenuOpen} />
+						</button>
+						{
+							isMenuOpen && (
+								<FocusTrap
+									focusTrapOptions={{
+										clickOutsideDeactivates: true,
+										escapeDeactivates: true,
+										onDeactivate: closeMenu,
+										returnFocusOnDeactivate: true,
 									}}
 								>
-									{section.name}
-								</button>
-							))}
-						</MenuMobile>
+									<div>
+										<button
+											aria-label="Close menu"
+											className={`icon-menu ${isMenuOpen ? '' : ''}`}
+											/* eslint-disable no-unused-expressions */
+											onClick={closeMenu}
+										>
+											<InlineSVG alt="Close menu icon" aria-hidden role="img" src={iconMenuClose} />
+										</button>
+										<Backdrop className={isMenuOpen ? 'active' : 'inactive'} />
+										<MenuMobile className={isMenuOpen ? 'active' : 'inactive'}>
+											{menu.map(section => (
+												<button
+													aria-label={`Go to ${section.name} section`}
+													type="button"
+													key={section.name}
+													className="button-mobile"
+													onClick={() => {
+														closeMenu();
+														scrollToElement(`#${section.name}`, scrollParams);
+													}}
+												>
+													{section.name}
+												</button>
+											))}
+										</MenuMobile>
+									</div>
+								</FocusTrap>
+							)
+						}
 					</MenuWrapper>
 				</MediaQuery>
 
