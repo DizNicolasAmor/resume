@@ -55,7 +55,12 @@ const Projects = ({ data, projectActive, updateProjectActive }) => (
 						<Collapse isOpened={isExpanded}>
 							<ProjectDescription>
 								<div className="img-wrapper">
-									<InlineSVG src={pro.image} />
+									<InlineSVG
+										aria-hidden
+										alt={`${pro.title} descriptive image`}
+										role="img"
+										src={pro.image}
+									/>
 								</div>
 								<div className="description-text">
 									{pro.description}
