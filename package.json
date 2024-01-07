@@ -15,7 +15,8 @@
 		"react-scripts": "5.0.1",
 		"scroll-to-element": "^2.0.2",
 		"styled-components": "^5.3.6",
-		"svg-inline-react": "^3.1.0"
+		"svg-inline-react": "^3.1.0",
+		"swiper": "^11.0.5"
 	},
 	"scripts": {
 		"start": "react-scripts start",
