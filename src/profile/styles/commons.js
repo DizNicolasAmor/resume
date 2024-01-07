@@ -1,8 +1,8 @@
-import styled, { css, injectGlobal } from 'styled-components';
+import styled, { css, createGlobalStyle } from 'styled-components';
 import { FONT, COLOR, DEVICE } from './variables';
 
 /* eslint-disable no-unused-expressions */
-injectGlobal`
+export const GlobalStyle = createGlobalStyle`
     body {
         margin: 0;
         padding: 0;

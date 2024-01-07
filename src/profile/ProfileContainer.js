@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import data from './utils/data.json';
 import Profile from './components/Profile';
+import { GlobalStyle } from './styles/commons';
 
 class ProfileContainer extends Component {
 	constructor(props) {
@@ -38,6 +39,7 @@ class ProfileContainer extends Component {
 					openMenu={this.openMenu}
 					closeMenu={this.closeMenu}
 				/>
+				<GlobalStyle />
 			</div>
 		);
 	}

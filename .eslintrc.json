@@ -1,5 +1,12 @@
 {
-    "extends": "@fizzmod/eslint-config",
+    "extends": [
+        "eslint:recommended",
+        "plugin:react/recommended"
+    ],
+    "globals": {
+        "document": true,
+        "window": true
+    },
     "parser": "babel-eslint",
     "parserOptions": {
         "sourceType": "module",
@@ -10,8 +17,9 @@
         }
     },
     "rules": {
-        "react/jsx-one-expression-per-line": [true, { "allow": "literal" }],
+        "react/jsx-one-expression-per-line": [0, { "allow": "literal" }],
         "import/no-named-as-default": 0,
-        "import/no-named-as-default-member": 0
+        "import/no-named-as-default-member": 0,
+        "linebreak-style": 0
     }
 }
