@@ -9,14 +9,12 @@
     "react": "^16.4.2",
     "react-collapse": "^4.0.3",
     "react-dom": "^16.4.2",
-    "react-id-swiper": "^4.0.0",
     "react-motion": "^0.5.2",
     "react-responsive": "^5.0.0",
     "react-scripts": "5.0.1",
     "scroll-to-element": "^2.0.2",
     "styled-components": "^5.3.6",
-    "svg-inline-react": "^3.1.0",
-    "swiper": "^11.0.5"
+    "svg-inline-react": "^3.1.0"
   },
   "scripts": {
     "lint": "eslint .",

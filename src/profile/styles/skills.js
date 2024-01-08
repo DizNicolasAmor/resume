@@ -3,11 +3,13 @@ import { FONT, COLOR, DEVICE } from './variables';
 
 export const SkillsBody = styled.div`
 	width: 560px;
-	height: 100px;
+	height: auto;
 	margin: 0 auto;
 	display: flex;
-	flex-flow: row nowrap;
-	align-items: stretch !important;
+	flex-wrap: wrap;
+    justify-content: center;
+	align-items: stretch;
+    column-gap: 23px;
 	position: relative;
 
 	@media (max-width: 650px) {
@@ -23,55 +25,13 @@ export const SkillsBody = styled.div`
 		width: 210px;
 	}
 
-	.swiper-container {
-		width: 100%;
-		height: auto;
-		position: relative;
-		overflow: hidden;
-		.swiper-wrapper {
-			width: 100%;
-			display: flex !important;
-			flex-flow: row nowrap;
-		}
-		.swiper-slide {
-			position: relative;
-		}
-	}
 	div {
 		position: relative;
-		height: 100%;
+		height: 90px;
 		display: block;
 		img {
 			width: auto;
 			height: auto;
-		}
-	}
-
-	.arrow {
-		position: absolute;
-		height: 100%;
-		border: none;
-		background: transparent;
-		cursor: pointer;
-		svg path {
-			fill: ${COLOR.MAIN_DARK};
-		}
-		-webkit-transition: 0.3s;
-		transition: 0.3s;
-		&:hover {
-			opacity: 0.6;
-		}
-		&:focus {
-			outline: 1px solid ${COLOR.MAIN_DARK};
-		}
-		&.prev {
-			left: -32px;
-			svg {
-				transform: rotate(180deg);
-			}
-		}
-		&.next {
-			right: -32px;
 		}
 	}
 `;
